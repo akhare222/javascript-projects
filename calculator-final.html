@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="styles/calculator-final.css"
+    </head>
+    <body>
+        <p class="js-input-field input-field"></p>
+        <br>
+        <button class="js-calculator-button calculator-button" onclick="update(' 1 ')">1</button>
+        <button class="js-calculator-button calculator-button" onclick="update(' 2 ')">2</button>
+        <button class="js-calculator-button calculator-button" onclick="update(' 3 ')">3</button>
+        <button class="calculator-button orange-button" onclick="update(' + ')">+</button>
+        <br>
+        <button class="js-calculator-button calculator-button" onclick="update(' 4 ')">4</button>
+        <button class="js-calculator-button calculator-button" onclick="update(' 5 ')">5</button>
+        <button class="js-calculator-button calculator-button" onclick="update(' 6 ')">6</button>
+        <button class="calculator-button orange-button" onclick="update(' - ')">-</button>
+        <br>
+        <button class="js-calculator-button calculator-button" onclick="update(' 7 ')">7</button>
+        <button class="js-calculator-button calculator-button" onclick="update(' 8 ')">8</button>
+        <button class="js-calculator-button calculator-button" onclick="update(' 9 ')">9</button>
+        <button class="js-calculator-button calculator-button orange-button" onclick="update(' * ')">*</button>
+        <br>
+        <button class="js-calculator-button calculator-button" onclick="update(' 0 ')">0</button>
+        <button class="calculator-button" onclick="update(' . ')">.</button>
+        <button class="calculator-button" onclick="displayTotal()">=</button>
+        <button class="calculator-button orange-button" onclick="update(' / ')">/</button>
+        <br>
+        <button class="calculator-button clear-button" onclick="clearDisplay()">clear</button>
+
+        <script>
+            let calculation = localStorage.getItem('calculation') || '';
+            let inputDisplayElement = document.querySelector('.js-input-field');
+
+            if(calculation){
+                inputDisplayElement.innerHTML = calculation;
+            }
+
+            function update(op){
+                calculation += op;
+                inputDisplayElement.innerHTML = calculation;
+                localStorage.setItem('calculation', calculation);
+                console.log('calculation inside update: ' + calculation);
+                
+            }
+
+            function displayTotal(){
+                calculation = eval(calculation);
+                inputDisplayElement.innerHTML = calculation;
+                localStorage.setItem('calculation', calculation);
+                console.log('calculation inside display: ' + calculation);
+            }
+
+            function clearDisplay(){
+                calculation = '';
+                inputDisplayElement.innerHTML = '';
+
+            }
+
+
+        </script>
+    </body>
+</html>

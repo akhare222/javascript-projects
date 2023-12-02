@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>
+            Advanced Functions
+        </title>
+    </head>
+    <body>
+        <button class="js-start-button" onclick="clicked()">Add to cart</button>
+        <p class="js-message"></p>
+      
+        <script>
+            let messageElement = document.querySelector('.js-message');
+            function clicked() {                               
+                messageElement.innerHTML = 'Added';
+                setTimeout(changeText, 2000);
+            };
+
+           function changeText() {
+            messageElement.innerHTML = '';
+
+            }
+
+
+        </script>
+    </body>
+</html>

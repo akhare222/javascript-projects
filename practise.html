@@ -1,0 +1,47 @@
+<!Doctype html>
+<html>
+    <head>
+        <style>
+            .isToggle {
+                background-color: black;
+                color:white
+        </style>
+        <title>
+            Practice Sets
+        </title>
+    </head>
+    <body>
+       <button class="js-gaming-button" onclick="toggle('gaming')">
+        gaming
+       </button>
+       <button class="js-music-button" onclick="toggle('music')">
+        Music
+       </button>
+       <button class="js-tech-button" onclick="toggle('tech')">
+        Tech
+       </button>
+       <button onclick="increaseByOne([1, 2, 3])">Increase by 1</button>
+        <script>
+
+            function toggle(name){
+                let buttonElement = document.querySelector(`.js-${name}-button`);
+
+                if(buttonElement.classList.contains('isToggle')){
+                    buttonElement.classList.remove('isToggle')
+                }
+                else{
+                    buttonElement.classList.add('isToggle');
+                }
+            }
+
+            function increaseByOne(arr){
+                for(let i=0; i<arr.length;i++){
+                    arr[i] = arr[i] + 1;
+                    console.log(arr[i]);
+                }
+            }
+
+        
+        </script>
+    </body>
+</html>

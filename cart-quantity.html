@@ -1,0 +1,32 @@
+<!Doctype html>
+<html>
+    <head>
+        <style>
+        </style>
+        <title>
+            Cart Quantity
+        </title>
+    </head>
+    <body>
+
+        <button onclick="showCartQauntity()">Show Quantity</button>
+        <button onclick="cartQuantity += 1; showCartQauntity()">Add to cart</button>
+        <button onclick="cartQuantity += 2; showCartQauntity()">+2</button>
+        <button onclick="cartQuantity += 3; showCartQauntity()">+3</button>
+        <button onclick="cartQuantity = 0; showCartQauntity()">Reset Cart</button>
+        <button onclick="showMaxNumberOfCarts()">Maximum number of carts allowed</button>
+        <script>
+            let cartQuantity = 0;
+            const numberOfCarts = 9;
+
+            function showCartQauntity(){
+                console.log(`cart quantity: ${cartQuantity}`)
+            }
+
+            function showMaxNumberOfCarts(){
+                console.log(`max number of carts allowed: ${numberOfCarts}`)
+            }
+            
+        </script>
+    </body>
+</html>
